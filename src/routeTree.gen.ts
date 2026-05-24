@@ -9,12 +9,72 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UxAnalysisRouteImport } from './routes/ux-analysis'
+import { Route as TrustRouteImport } from './routes/trust'
+import { Route as SettingsRouteImport } from './routes/settings'
+import { Route as SeoRouteImport } from './routes/seo'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as RecommendationsRouteImport } from './routes/recommendations'
+import { Route as QualityScoresRouteImport } from './routes/quality-scores'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ConversionRouteImport } from './routes/conversion'
+import { Route as CompetitorsRouteImport } from './routes/competitors'
+import { Route as AuditRunsRouteImport } from './routes/audit-runs'
 import { Route as IndexRouteImport } from './routes/index'
 
+const UxAnalysisRoute = UxAnalysisRouteImport.update({
+  id: '/ux-analysis',
+  path: '/ux-analysis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrustRoute = TrustRouteImport.update({
+  id: '/trust',
+  path: '/trust',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeoRoute = SeoRouteImport.update({
+  id: '/seo',
+  path: '/seo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecommendationsRoute = RecommendationsRouteImport.update({
+  id: '/recommendations',
+  path: '/recommendations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const QualityScoresRoute = QualityScoresRouteImport.update({
+  id: '/quality-scores',
+  path: '/quality-scores',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConversionRoute = ConversionRouteImport.update({
+  id: '/conversion',
+  path: '/conversion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CompetitorsRoute = CompetitorsRouteImport.update({
+  id: '/competitors',
+  path: '/competitors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuditRunsRoute = AuditRunsRouteImport.update({
+  id: '/audit-runs',
+  path: '/audit-runs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,37 +85,184 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/audit-runs': typeof AuditRunsRoute
+  '/competitors': typeof CompetitorsRoute
+  '/conversion': typeof ConversionRoute
   '/dashboard': typeof DashboardRoute
+  '/quality-scores': typeof QualityScoresRoute
+  '/recommendations': typeof RecommendationsRoute
+  '/reports': typeof ReportsRoute
+  '/seo': typeof SeoRoute
+  '/settings': typeof SettingsRoute
+  '/trust': typeof TrustRoute
+  '/ux-analysis': typeof UxAnalysisRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/audit-runs': typeof AuditRunsRoute
+  '/competitors': typeof CompetitorsRoute
+  '/conversion': typeof ConversionRoute
   '/dashboard': typeof DashboardRoute
+  '/quality-scores': typeof QualityScoresRoute
+  '/recommendations': typeof RecommendationsRoute
+  '/reports': typeof ReportsRoute
+  '/seo': typeof SeoRoute
+  '/settings': typeof SettingsRoute
+  '/trust': typeof TrustRoute
+  '/ux-analysis': typeof UxAnalysisRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/audit-runs': typeof AuditRunsRoute
+  '/competitors': typeof CompetitorsRoute
+  '/conversion': typeof ConversionRoute
   '/dashboard': typeof DashboardRoute
+  '/quality-scores': typeof QualityScoresRoute
+  '/recommendations': typeof RecommendationsRoute
+  '/reports': typeof ReportsRoute
+  '/seo': typeof SeoRoute
+  '/settings': typeof SettingsRoute
+  '/trust': typeof TrustRoute
+  '/ux-analysis': typeof UxAnalysisRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dashboard'
+  fullPaths:
+    | '/'
+    | '/audit-runs'
+    | '/competitors'
+    | '/conversion'
+    | '/dashboard'
+    | '/quality-scores'
+    | '/recommendations'
+    | '/reports'
+    | '/seo'
+    | '/settings'
+    | '/trust'
+    | '/ux-analysis'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dashboard'
-  id: '__root__' | '/' | '/dashboard'
+  to:
+    | '/'
+    | '/audit-runs'
+    | '/competitors'
+    | '/conversion'
+    | '/dashboard'
+    | '/quality-scores'
+    | '/recommendations'
+    | '/reports'
+    | '/seo'
+    | '/settings'
+    | '/trust'
+    | '/ux-analysis'
+  id:
+    | '__root__'
+    | '/'
+    | '/audit-runs'
+    | '/competitors'
+    | '/conversion'
+    | '/dashboard'
+    | '/quality-scores'
+    | '/recommendations'
+    | '/reports'
+    | '/seo'
+    | '/settings'
+    | '/trust'
+    | '/ux-analysis'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuditRunsRoute: typeof AuditRunsRoute
+  CompetitorsRoute: typeof CompetitorsRoute
+  ConversionRoute: typeof ConversionRoute
   DashboardRoute: typeof DashboardRoute
+  QualityScoresRoute: typeof QualityScoresRoute
+  RecommendationsRoute: typeof RecommendationsRoute
+  ReportsRoute: typeof ReportsRoute
+  SeoRoute: typeof SeoRoute
+  SettingsRoute: typeof SettingsRoute
+  TrustRoute: typeof TrustRoute
+  UxAnalysisRoute: typeof UxAnalysisRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/ux-analysis': {
+      id: '/ux-analysis'
+      path: '/ux-analysis'
+      fullPath: '/ux-analysis'
+      preLoaderRoute: typeof UxAnalysisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trust': {
+      id: '/trust'
+      path: '/trust'
+      fullPath: '/trust'
+      preLoaderRoute: typeof TrustRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seo': {
+      id: '/seo'
+      path: '/seo'
+      fullPath: '/seo'
+      preLoaderRoute: typeof SeoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recommendations': {
+      id: '/recommendations'
+      path: '/recommendations'
+      fullPath: '/recommendations'
+      preLoaderRoute: typeof RecommendationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quality-scores': {
+      id: '/quality-scores'
+      path: '/quality-scores'
+      fullPath: '/quality-scores'
+      preLoaderRoute: typeof QualityScoresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conversion': {
+      id: '/conversion'
+      path: '/conversion'
+      fullPath: '/conversion'
+      preLoaderRoute: typeof ConversionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/competitors': {
+      id: '/competitors'
+      path: '/competitors'
+      fullPath: '/competitors'
+      preLoaderRoute: typeof CompetitorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/audit-runs': {
+      id: '/audit-runs'
+      path: '/audit-runs'
+      fullPath: '/audit-runs'
+      preLoaderRoute: typeof AuditRunsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,8 +277,28 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuditRunsRoute: AuditRunsRoute,
+  CompetitorsRoute: CompetitorsRoute,
+  ConversionRoute: ConversionRoute,
   DashboardRoute: DashboardRoute,
+  QualityScoresRoute: QualityScoresRoute,
+  RecommendationsRoute: RecommendationsRoute,
+  ReportsRoute: ReportsRoute,
+  SeoRoute: SeoRoute,
+  SettingsRoute: SettingsRoute,
+  TrustRoute: TrustRoute,
+  UxAnalysisRoute: UxAnalysisRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
