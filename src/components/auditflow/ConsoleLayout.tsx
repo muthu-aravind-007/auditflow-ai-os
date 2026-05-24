@@ -1,11 +1,11 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import type { ReactNode } from "react";
+import type { ReactNode, ComponentType } from "react";
 import { Logo, Kbd, StatusDot } from "./Brand";
 
 type NavItem = {
   to: string;
   label: string;
-  icon: () => JSX.Element;
+  icon: ComponentType;
   badge?: string;
 };
 
