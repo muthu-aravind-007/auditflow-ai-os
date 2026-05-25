@@ -18,8 +18,6 @@ import { Route as RecommendationsRouteImport } from './routes/recommendations'
 import { Route as QualityScoresRouteImport } from './routes/quality-scores'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ConversionRouteImport } from './routes/conversion'
-import { Route as CompetitorsRouteImport } from './routes/competitors'
-import { Route as AuditRunsRouteImport } from './routes/audit-runs'
 import { Route as IndexRouteImport } from './routes/index'
 
 const UxAnalysisRoute = UxAnalysisRouteImport.update({
@@ -67,16 +65,6 @@ const ConversionRoute = ConversionRouteImport.update({
   path: '/conversion',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CompetitorsRoute = CompetitorsRouteImport.update({
-  id: '/competitors',
-  path: '/competitors',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AuditRunsRoute = AuditRunsRouteImport.update({
-  id: '/audit-runs',
-  path: '/audit-runs',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -85,8 +73,6 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/audit-runs': typeof AuditRunsRoute
-  '/competitors': typeof CompetitorsRoute
   '/conversion': typeof ConversionRoute
   '/dashboard': typeof DashboardRoute
   '/quality-scores': typeof QualityScoresRoute
@@ -99,8 +85,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/audit-runs': typeof AuditRunsRoute
-  '/competitors': typeof CompetitorsRoute
   '/conversion': typeof ConversionRoute
   '/dashboard': typeof DashboardRoute
   '/quality-scores': typeof QualityScoresRoute
@@ -114,8 +98,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/audit-runs': typeof AuditRunsRoute
-  '/competitors': typeof CompetitorsRoute
   '/conversion': typeof ConversionRoute
   '/dashboard': typeof DashboardRoute
   '/quality-scores': typeof QualityScoresRoute
@@ -130,8 +112,6 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/audit-runs'
-    | '/competitors'
     | '/conversion'
     | '/dashboard'
     | '/quality-scores'
@@ -144,8 +124,6 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/audit-runs'
-    | '/competitors'
     | '/conversion'
     | '/dashboard'
     | '/quality-scores'
@@ -158,8 +136,6 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/audit-runs'
-    | '/competitors'
     | '/conversion'
     | '/dashboard'
     | '/quality-scores'
@@ -173,8 +149,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AuditRunsRoute: typeof AuditRunsRoute
-  CompetitorsRoute: typeof CompetitorsRoute
   ConversionRoute: typeof ConversionRoute
   DashboardRoute: typeof DashboardRoute
   QualityScoresRoute: typeof QualityScoresRoute
@@ -251,20 +225,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConversionRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/competitors': {
-      id: '/competitors'
-      path: '/competitors'
-      fullPath: '/competitors'
-      preLoaderRoute: typeof CompetitorsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/audit-runs': {
-      id: '/audit-runs'
-      path: '/audit-runs'
-      fullPath: '/audit-runs'
-      preLoaderRoute: typeof AuditRunsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -277,8 +237,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AuditRunsRoute: AuditRunsRoute,
-  CompetitorsRoute: CompetitorsRoute,
   ConversionRoute: ConversionRoute,
   DashboardRoute: DashboardRoute,
   QualityScoresRoute: QualityScoresRoute,
