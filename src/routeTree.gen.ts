@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UxAnalysisRouteImport } from './routes/ux-analysis'
 import { Route as TrustRouteImport } from './routes/trust'
-import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SeoRouteImport } from './routes/seo'
 import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as RecommendationsRouteImport } from './routes/recommendations'
@@ -28,11 +27,6 @@ const UxAnalysisRoute = UxAnalysisRouteImport.update({
 const TrustRoute = TrustRouteImport.update({
   id: '/trust',
   path: '/trust',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SettingsRoute = SettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SeoRoute = SeoRouteImport.update({
@@ -79,7 +73,6 @@ export interface FileRoutesByFullPath {
   '/recommendations': typeof RecommendationsRoute
   '/reports': typeof ReportsRoute
   '/seo': typeof SeoRoute
-  '/settings': typeof SettingsRoute
   '/trust': typeof TrustRoute
   '/ux-analysis': typeof UxAnalysisRoute
 }
@@ -91,7 +84,6 @@ export interface FileRoutesByTo {
   '/recommendations': typeof RecommendationsRoute
   '/reports': typeof ReportsRoute
   '/seo': typeof SeoRoute
-  '/settings': typeof SettingsRoute
   '/trust': typeof TrustRoute
   '/ux-analysis': typeof UxAnalysisRoute
 }
@@ -104,7 +96,6 @@ export interface FileRoutesById {
   '/recommendations': typeof RecommendationsRoute
   '/reports': typeof ReportsRoute
   '/seo': typeof SeoRoute
-  '/settings': typeof SettingsRoute
   '/trust': typeof TrustRoute
   '/ux-analysis': typeof UxAnalysisRoute
 }
@@ -118,7 +109,6 @@ export interface FileRouteTypes {
     | '/recommendations'
     | '/reports'
     | '/seo'
-    | '/settings'
     | '/trust'
     | '/ux-analysis'
   fileRoutesByTo: FileRoutesByTo
@@ -130,7 +120,6 @@ export interface FileRouteTypes {
     | '/recommendations'
     | '/reports'
     | '/seo'
-    | '/settings'
     | '/trust'
     | '/ux-analysis'
   id:
@@ -142,7 +131,6 @@ export interface FileRouteTypes {
     | '/recommendations'
     | '/reports'
     | '/seo'
-    | '/settings'
     | '/trust'
     | '/ux-analysis'
   fileRoutesById: FileRoutesById
@@ -155,7 +143,6 @@ export interface RootRouteChildren {
   RecommendationsRoute: typeof RecommendationsRoute
   ReportsRoute: typeof ReportsRoute
   SeoRoute: typeof SeoRoute
-  SettingsRoute: typeof SettingsRoute
   TrustRoute: typeof TrustRoute
   UxAnalysisRoute: typeof UxAnalysisRoute
 }
@@ -174,13 +161,6 @@ declare module '@tanstack/react-router' {
       path: '/trust'
       fullPath: '/trust'
       preLoaderRoute: typeof TrustRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/settings': {
-      id: '/settings'
-      path: '/settings'
-      fullPath: '/settings'
-      preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/seo': {
@@ -243,7 +223,6 @@ const rootRouteChildren: RootRouteChildren = {
   RecommendationsRoute: RecommendationsRoute,
   ReportsRoute: ReportsRoute,
   SeoRoute: SeoRoute,
-  SettingsRoute: SettingsRoute,
   TrustRoute: TrustRoute,
   UxAnalysisRoute: UxAnalysisRoute,
 }

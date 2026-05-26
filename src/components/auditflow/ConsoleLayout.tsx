@@ -14,7 +14,6 @@ const navGroups: { label: string; items: NavItem[] }[] = [
     label: "Workspace",
     items: [
       { to: "/dashboard", label: "Overview", icon: IconHome },
-      { to: "/audit-runs", label: "Audit runs", icon: IconRuns, badge: "3" },
       { to: "/quality-scores", label: "Quality scores", icon: IconScore },
       { to: "/reports", label: "Reports", icon: IconReport },
     ],
@@ -26,14 +25,12 @@ const navGroups: { label: string; items: NavItem[] }[] = [
       { to: "/conversion", label: "Conversion", icon: IconCV },
       { to: "/seo", label: "SEO & performance", icon: IconSEO },
       { to: "/trust", label: "Trust & brand", icon: IconTrust },
-      { to: "/competitors", label: "Competitors", icon: IconCompetitor },
     ],
   },
   {
     label: "Output",
     items: [
       { to: "/recommendations", label: "Recommendations", icon: IconReco },
-      { to: "/settings", label: "Settings", icon: IconSettings },
     ],
   },
 ];
@@ -61,13 +58,6 @@ export function ConsoleLayout({
           <Logo />
         </div>
         <div className="border-b border-hairline px-3 py-3">
-          <button className="flex w-full items-center justify-between rounded-md border border-hairline bg-surface px-2.5 py-1.5 text-[12px] text-muted-foreground hover:bg-surface-elevated">
-            <span className="flex items-center gap-2">
-              <span className="h-4 w-4 rounded-[3px] bg-accent/20 ring-1 ring-accent/40" />
-              <span className="text-foreground/90">Northbeam Studio</span>
-            </span>
-            <span className="text-[10px]">⌄</span>
-          </button>
         </div>
         <nav className="flex-1 overflow-y-auto px-2 py-3">
           {navGroups.map((g) => (
@@ -102,17 +92,6 @@ export function ConsoleLayout({
             </div>
           ))}
         </nav>
-        <div className="border-t border-hairline px-3 py-3">
-          <div className="flex items-center gap-2.5">
-            <div className="h-7 w-7 rounded-full bg-gradient-to-br from-accent/50 to-accent/10 ring-1 ring-accent/30" />
-            <div className="min-w-0 flex-1">
-              <div className="truncate text-[12px] font-medium">Mara Chen</div>
-              <div className="text-mono truncate text-[10.5px] text-muted-foreground">
-                mara@northbeam.studio
-              </div>
-            </div>
-          </div>
-        </div>
       </aside>
 
       {/* Main */}
@@ -125,21 +104,6 @@ export function ConsoleLayout({
             </Link>
             <span className="text-hairline">/</span>
             <span className="text-[12.5px] font-medium">{title}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <button className="flex items-center gap-2 rounded-md border border-hairline bg-surface px-2.5 py-1.5 text-[12px] text-muted-foreground hover:bg-surface-elevated">
-              <IconSearch />
-              <span>Ask AuditFlow or jump to…</span>
-              <span className="mx-2 h-3 w-px bg-hairline" />
-              <Kbd>⌘</Kbd>
-              <Kbd>K</Kbd>
-            </button>
-            <button className="rounded-md border border-hairline bg-surface px-2.5 py-1.5 text-[12px] text-muted-foreground hover:bg-surface-elevated">
-              <IconBell />
-            </button>
-            <button className="rounded-md bg-accent px-3 py-1.5 text-[12.5px] font-medium text-accent-foreground hover:opacity-90">
-              New audit
-            </button>
           </div>
         </div>
 
@@ -165,10 +129,6 @@ export function ConsoleLayout({
           {children}
 
           <div className="text-mono mt-10 flex items-center justify-between border-t border-hairline pt-5 text-[10.5px] text-muted-foreground">
-            <span>AuditFlow console · region: eu-west-1 · build 4.2.1</span>
-            <span className="flex items-center gap-1.5">
-              <StatusDot /> All systems nominal
-            </span>
           </div>
         </div>
       </main>

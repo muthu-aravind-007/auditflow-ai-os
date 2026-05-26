@@ -56,20 +56,8 @@ function Nav() {
       <div className="mx-auto flex h-12 max-w-[1240px] items-center justify-between px-6">
         <div className="flex items-center gap-8">
           <Logo />
-          <nav className="hidden items-center gap-5 text-[12.5px] text-muted-foreground md:flex">
-            <a href="#platform" className="hover:text-foreground">Platform</a>
-            <a href="#intelligence" className="hover:text-foreground">Intelligence</a>
-            <a href="#workflow" className="hover:text-foreground">Workflow</a>
-            <a href="#pricing" className="hover:text-foreground">Pricing</a>
-            <a href="#docs" className="hover:text-foreground">Docs</a>
-          </nav>
         </div>
         <div className="flex items-center gap-2">
-          <button className="hidden items-center gap-2 rounded-md border border-border bg-surface px-2.5 py-1.5 text-[12px] text-muted-foreground transition-colors hover:bg-surface-elevated md:flex">
-            <span>Search audits</span>
-            <Kbd>⌘</Kbd><Kbd>K</Kbd>
-          </button>
-          <Link to="/dashboard" className="text-[12.5px] text-muted-foreground hover:text-foreground">Sign in</Link>
           <Link to="/dashboard" className="rounded-md bg-accent px-3 py-1.5 text-[12.5px] font-medium text-accent-foreground transition-opacity hover:opacity-90">
             Open console
           </Link>
@@ -103,14 +91,9 @@ function Hero() {
             <Link to="/dashboard" className="rounded-md bg-accent px-4 py-2 text-[13px] font-medium text-accent-foreground transition-opacity hover:opacity-90">
               Run an audit
             </Link>
-            <a href="#workflow" className="rounded-md border border-border bg-surface px-4 py-2 text-[13px] font-medium text-foreground/90 transition-colors hover:bg-surface-elevated">
-              See the workflow
-            </a>
           </div>
           <div className="text-mono mt-5 flex items-center justify-center gap-4 text-[11px] text-muted-foreground">
             <span>SOC 2 Type II</span><span className="text-hairline">·</span>
-            <span>EU + US regions</span><span className="text-hairline">·</span>
-            <span>Used by 1,200+ agencies</span>
           </div>
         </div>
 
@@ -195,15 +178,6 @@ function Footer() {
     <footer className="border-t border-hairline">
       <div className="mx-auto flex max-w-[1240px] flex-col gap-6 px-6 py-10 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-4">
-          <Logo />
-          <span className="text-mono text-[11px] text-muted-foreground">© 2026 AuditFlow Systems, Inc.</span>
-        </div>
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[12px] text-muted-foreground">
-          <a href="#" className="hover:text-foreground">Platform</a>
-          <a href="#" className="hover:text-foreground">Changelog</a>
-          <a href="#" className="hover:text-foreground">Security</a>
-          <a href="#" className="hover:text-foreground">Status</a>
-          <a href="#" className="hover:text-foreground">Privacy</a>
         </div>
       </div>
     </footer>
